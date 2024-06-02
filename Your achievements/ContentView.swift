@@ -3,16 +3,17 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
-            
-            Spacer()
-            
+
             Text("Your achievements")
                 .font(.title)
                 .fontWeight(.bold)
+                .padding(.horizontal)
             
             Divider()
-            
-            HStack {
+        }
+        ScrollView {
+            VStack {
+                HStack {
                 Text("May 24 - May 30")
                     .font(.title2)
                     .foregroundColor(.black)
@@ -25,9 +26,8 @@ struct ContentView: View {
                     CircleImage(image: Image("Button"))
                 }.padding(.horizontal, -40)
                 
-            }
+                } .padding([.horizontal, .bottom])
             
-            ScrollView {
                 VStack {
                     VStack {
                         CircleImage2(image: Image("Medal"))
@@ -92,7 +92,7 @@ struct ContentView: View {
                         .padding()
                     }
                     .bold()
-                    .frame(minWidth: 0, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+                    .frame(minWidth: 0, maxWidth: .infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0)
                     .background(Color.black)
                     .cornerRadius(20)
                     .padding([.leading, .bottom, .trailing], -15)
@@ -102,6 +102,9 @@ struct ContentView: View {
                 //.frame(width: 400.0, height: 300.0)
                 .background(Color.black.opacity(0.93))
                 .cornerRadius(20)
+                
+                Spacer()
+                    .padding(/*@START_MENU_TOKEN@*/.all, 5.0/*@END_MENU_TOKEN@*/)
                 
                 HStack {
                     VStack() {
